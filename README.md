@@ -63,6 +63,11 @@ cp com.spoofmac.plist /Library/LaunchDaemons/
 
 not into a `LaunchAgents` folder. Launch agents ignore the `UserName` argument.
 
+Insure that the owner of the file is `root`:
+
+```
+sudo chown root:wheel /Library/LaunchDaemons/com.spoofmac.plist
+```
 
 ## Launch the daemon
 
