@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UserName</key>
+	<string>root</string>
+	<key>StandardErrorPath</key>
+	<string>/tmp/spoofmac.stderr</string>
+	<key>StandardOutPath</key>
+	<string>/tmp/spoofmac.stdout</string>
+	<key>Label</key>
+	<string>com.spoofmac.program</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/usr/local/bin/xpc_set_event_stream_handler</string>
+		<string>/usr/local/bin/spoofmac.sh</string>
+	</array>
+	<key>LaunchEvents</key>
+	<dict>
+		<key>com.apple.iokit.matching</key>
+		<dict>
+			<key>com.apple.device-attach</key>
+			<dict>
+				<key>idVendor</key>
+				<integer>32902</integer>
+				<key>idProduct</key>
+				<integer>5427</integer>
+				<key>IOProviderClass</key>
+				<string>IOPCIDevice</string>
+				<key>IOMatchLaunchStream</key>
+				<true/>
+				<key>IOMatchStream</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
