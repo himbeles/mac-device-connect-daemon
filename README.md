@@ -11,17 +11,17 @@ The setup is explained using the MAC spoofing scenario example files in `example
 
 ## Put your shell script or executable into place
 
-Adapt the shell script `spoof-mac.sh` to your needs and
+Adapt the shell script `spoofmac.sh` to your needs and
 make it executable:
 
 ```
-sudo chmod 755 spoof-mac.sh
+sudo chmod 755 spoofmac.sh
 ```
 
 Then move it into `/usr/local/bin`, or some other directory:
 
 ```
-cp spoof-mac.sh /usr/local/bin/
+cp spoofmac.sh /usr/local/bin/
 ```
 
 ## Building the stream handler
