@@ -17,14 +17,15 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "greet"
-  greet:
+  compile:
     # The type of runner that the job will run on
     runs-on: macos-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Runs a single command using the runners shell
+    - name: Checkout
+      uses: actions/checkout@v2.3.2
+      
     - name: Compile xpc_set_event_stream_handler
       run: gcc -framework Foundation -o xpc_set_event_stream_handler xpc_set_event_stream_handler.m
     
