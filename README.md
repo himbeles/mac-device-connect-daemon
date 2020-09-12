@@ -1,3 +1,5 @@
+![Compile Handler](https://github.com/himbeles/mac-device-connect-daemon/workflows/Compile%20Handler/badge.svg?branch=master)
+
 # Run shell script or executable triggered by device detection on a mac
 
 This tutorial describes how to run an arbitrary executable or shell script triggered by the connection of an external device (usb/thunderbolt) to a mac computer.
@@ -37,6 +39,10 @@ Let's place it into `/usr/local/bin`, like the main executable for the daemon.
 ```
 cp xpc_set_event_stream_handler /usr/local/bin/
 ```
+
+The stream handler is also compiled via a [Github Action](https://github.com/himbeles/mac-device-connect-daemon/actions?query=workflow%3A%22Compile+Handler%22) on every commit. 
+This uses a Github `macos-latest` machine. 
+
 
 ## Setup the daemon
 
