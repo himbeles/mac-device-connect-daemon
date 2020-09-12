@@ -1,4 +1,4 @@
-![Compile Handler](https://github.com/himbeles/mac-device-connect-daemon/workflows/Compile%20Handler/badge.svg?branch=master)
+[![Compile Handler](https://github.com/himbeles/mac-device-connect-daemon/workflows/Compile%20Handler/badge.svg?branch=master)](https://github.com/himbeles/mac-device-connect-daemon/actions?query=workflow%3A%22Compile+Handler%22)
 
 # Run shell script or executable triggered by device detection on a mac
 
