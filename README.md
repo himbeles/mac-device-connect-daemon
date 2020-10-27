@@ -1,8 +1,8 @@
 [![Compile Handler](https://github.com/himbeles/mac-device-connect-daemon/workflows/Compile%20Handler/badge.svg?branch=master)](https://github.com/himbeles/mac-device-connect-daemon/actions?query=workflow%3A%22Compile+Handler%22)
 
-# Run shell script or executable triggered by device detection on a mac
+# Run shell script or executable triggered by device detection on a Mac
 
-This tutorial describes how to run an arbitrary executable or shell script triggered by the connection of an external device (usb/thunderbolt) to a mac computer.
+This tutorial describes how to run an arbitrary executable or shell script triggered by the connection of an external device (usb/thunderbolt) to a Mac.
 
 This relies on Apple's `IOKit` library for device detection and a daemon for running the desired executable.
 For the daemon to not be triggered repeatedly after connecting the device, a special stream handler (created by [Ford Parsons](https://github.com/snosrap/xpc_set_event_stream_handler/blob/master/xpc_set_event_stream_handler/main.m)) is used to "consume" the `com.apple.iokit.matching` event, as explained [here](https://github.com/snosrap/xpc_set_event_stream_handler).
