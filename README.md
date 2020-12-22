@@ -87,3 +87,8 @@ and you are good to go.
 
 
 Unloading is done using `launchctl unload`.
+
+## Support me
+If you like this tutorial and code and you would like to support me,
+
+<a href="https://www.buymeacoffee.com/lri" target="_blank"><img width="120" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee"></a>
