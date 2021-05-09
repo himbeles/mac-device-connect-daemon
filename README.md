@@ -12,7 +12,7 @@ man xpc_events
 
 For the daemon to not be triggered repeatedly after connecting the device, a special stream handler (created by [Ford Parsons](https://github.com/snosrap/xpc_set_event_stream_handler/blob/master/xpc_set_event_stream_handler/main.m)) is used to "consume" the `com.apple.iokit.matching` event, as explained [here](https://github.com/snosrap/xpc_set_event_stream_handler).
 
-For example, this can be used to spoof the MAC address of an ethernet adapter when it is connected to the mac.
+For example, this can be used to spoof the MAC address of an ethernet adapter when it is connected to the Mac.
 The setup is explained using the MAC spoofing scenario example files in `example-spoof-MAC` but can be generalized to arbitrary executables and devices.
 
 
@@ -33,7 +33,7 @@ cp spoofmac.sh /usr/local/bin/
 
 ## Building the stream handler
 
-The stream handler is universal (no need to adapt) and can be built on a mac command line (with xcode installed):
+The stream handler is universal (no need to adapt) and can be built on a Mxac command line (with xcode installed):
 
 ```
 gcc -framework Foundation -o xpc_set_event_stream_handler xpc_set_event_stream_handler.m
@@ -53,7 +53,14 @@ This uses a Github `macos-latest` machine.
 
 The plist file `com.spoofmac.plist` contains the properties of the daemon that will run the executable on device connect trigger.
 
-It contains information for identifying the device you want to base your trigger on, like `idVendor`, `idProduct`, `IOProviderClass`. These can be figured out in the `System Information` App on your mac.
+It contains information for identifying the device you want to base your trigger on, like `idVendor`, `idProduct`, `IOProviderClass`. 
+Get them via the output of
+```sh
+ioreg -p IOProviderClass -l
+```
+where `<IOProviderClass>` should be either `IOPCI` (Thunderbolt) or `IOUSB` (USB).
+
+The identifiers can also be obtained from the `System Information` App on your Mac.
 
 ![Screenshot System Information](example-spoof-MAC/screenshot-system-info.png)
 
