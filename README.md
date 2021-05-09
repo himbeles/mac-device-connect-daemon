@@ -5,6 +5,11 @@
 This tutorial describes how to run an arbitrary executable or shell script triggered by the connection of an external device (usb/thunderbolt) to a Mac.
 
 This relies on Apple's `IOKit` library for device detection and a daemon for running the desired executable.
+See BSD man page on `xpc_events`:
+```sh
+man xpc_events
+```
+
 For the daemon to not be triggered repeatedly after connecting the device, a special stream handler (created by [Ford Parsons](https://github.com/snosrap/xpc_set_event_stream_handler/blob/master/xpc_set_event_stream_handler/main.m)) is used to "consume" the `com.apple.iokit.matching` event, as explained [here](https://github.com/snosrap/xpc_set_event_stream_handler).
 
 For example, this can be used to spoof the MAC address of an ethernet adapter when it is connected to the mac.
