@@ -33,7 +33,7 @@ cp spoofmac.sh /usr/local/bin/
 
 ## Building the stream handler
 
-The stream handler is universal (no need to adapt) and can be built on a Mxac command line (with xcode installed):
+The stream handler is universal (no need to adapt) and can be built on a Mac (with xcode installed):
 
 ```
 gcc -framework Foundation -o xpc_set_event_stream_handler xpc_set_event_stream_handler.m
