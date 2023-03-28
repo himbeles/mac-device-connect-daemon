@@ -1,2 +1,3 @@
 xpc_set_event_stream_handler
 .DS_Store
+XPCEventStreamHandler/Package.resolved

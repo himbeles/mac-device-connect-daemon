@@ -1,7 +1,7 @@
 import XCTest
 import class Foundation.Bundle
 
-final class EventStreamHandlerTests: XCTestCase {
+final class XPCEventStreamHandlerTests: XCTestCase {
     func testExample() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
@@ -15,7 +15,7 @@ final class EventStreamHandlerTests: XCTestCase {
         // Mac Catalyst won't have `Process`, but it is supported for executables.
         #if !targetEnvironment(macCatalyst)
 
-        let fooBinary = productsDirectory.appendingPathComponent("EventStreamHandler")
+        let fooBinary = productsDirectory.appendingPathComponent("XPCEventStreamHandler")
 
         let process = Process()
         process.executableURL = fooBinary

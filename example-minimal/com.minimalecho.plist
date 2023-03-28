@@ -5,15 +5,15 @@
 	<key>UserName</key>
 	<string>root</string>
 	<key>StandardErrorPath</key>
-	<string>/tmp/spoofmac.stderr</string>
+	<string>/tmp/minimalecho.stderr</string>
 	<key>StandardOutPath</key>
-	<string>/tmp/spoofmac.stdout</string>
+	<string>/tmp/minimalecho.stdout</string>
 	<key>Label</key>
-	<string>com.spoofmac.program</string>
+	<string>com.minimalecho.program</string>
 	<key>ProgramArguments</key>
 	<array>
 		<string>/usr/local/bin/handle-xpc-event-stream</string>
-		<string>/usr/local/bin/spoofmac.sh</string>
+		<string>/usr/local/bin/minimalecho.sh</string>
 	</array>
 	<key>LaunchEvents</key>
 	<dict>

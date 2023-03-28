@@ -33,16 +33,16 @@ cp spoofmac.sh /usr/local/bin/
 
 ## Building the stream handler
 
-The stream handler is universal (no need to adapt) and can be built on a Mac (with xcode installed):
+The stream handler is universal (no need to adapt) and can be built on a Mac (with xcode installed). 
 
 ```
-gcc -framework Foundation -o xpc_set_event_stream_handler xpc_set_event_stream_handler.m
+swift build --configuration release --package-path XPCEventStreamHandler
 ```
 
-Let's place it into `/usr/local/bin`, like the main executable for the daemon.
+Let's place the build product `handle-xpc-event-stream` into `/usr/local/bin`, like the main executable for the daemon.
 
 ```
-cp xpc_set_event_stream_handler /usr/local/bin/
+cp -f ./XPCEventStreamHandler/.build/release/handle-xpc-event-stream /usr/local/bin/handle-xpc-event-stream
 ```
 
 The stream handler is also compiled via a [Github Action](https://github.com/himbeles/mac-device-connect-daemon/actions?query=workflow%3A%22Compile+Handler%22) on every commit. 
