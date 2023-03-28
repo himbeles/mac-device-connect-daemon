@@ -4,10 +4,6 @@
 <dict>
 	<key>UserName</key>
 	<string>root</string>
-	<key>StandardErrorPath</key>
-	<string>/tmp/minimalecho.stderr</string>
-	<key>StandardOutPath</key>
-	<string>/tmp/minimalecho.stdout</string>
 	<key>Label</key>
 	<string>com.minimalecho.program</string>
 	<key>ProgramArguments</key>

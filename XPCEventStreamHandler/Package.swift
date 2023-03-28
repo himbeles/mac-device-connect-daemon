@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "XPCEventStreamHandler",
-    platforms: [.macOS("10.13")],
+    platforms: [.macOS("11")],
     products: [
         .executable(name: "handle-xpc-event-stream", targets: ["XPCEventStreamHandler"])
     ],

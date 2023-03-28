@@ -1,13 +1,9 @@
 import Foundation
 import XPC
 import ArgumentParser
-import os.log
+import OSLog
 
-import os.log
-
-extension OSLog {
-    private static var subsystem = "com.handle-xpc-event-stream.log"
-}
+let defaultLog = Logger()
 
 struct XPCEventStreamHandler: ParsableCommand {
     
@@ -31,20 +27,17 @@ struct XPCEventStreamHandler: ParsableCommand {
     func run() throws {
         /// wait for the event to be consumed
         let semaphore = DispatchSemaphore(value: 0)
-        os_log("Waiting for com.apple.iokit.matching event...");
-        let connection = xpc_connection_create_mach_service("com.apple.iokit.matching", nil, UInt64(XPC_CONNECTION_MACH_SERVICE_LISTENER))
-        xpc_connection_set_event_handler(connection, { object in
+        defaultLog.log("Waiting for com.apple.iokit.matching event...");
+        xpc_set_event_stream_handler("com.apple.iokit.matching", nil) { object in
             let event = xpc_dictionary_get_string(object, XPC_EVENT_KEY_NAME)
-            // log non-static string
-            os_log("%{public}", String(cString: event!))
             
+            defaultLog.log("detected event: \(String(cString: event!), privacy: .public)")
             semaphore.signal()
-        })
-        xpc_connection_resume(connection)
+        }
         semaphore.wait()
 
         /// run executable passed as CL
-        os_log("Running executable ...");
+        defaultLog.log("Running executable ...");
         let task = Process()
         task.executableURL = URL(fileURLWithPath: executable)
         try task.run()
