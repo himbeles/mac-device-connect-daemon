@@ -22,11 +22,11 @@
 			<key>com.apple.device-attach</key>
 			<dict>
 				<key>idVendor</key>
-				<integer>32902</integer>
+				<integer>5118</integer>
 				<key>idProduct</key>
-				<integer>5427</integer>
+				<integer>21760</integer>
 				<key>IOProviderClass</key>
-				<string>IOPCIDevice</string>
+				<string>IOUSBDevice</string>
 				<key>IOMatchLaunchStream</key>
 				<true/>
 				<key>IOMatchStream</key>

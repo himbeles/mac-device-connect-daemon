@@ -31,7 +31,7 @@ Then move it into `/usr/local/bin`, or some other directory:
 cp spoofmac.sh /usr/local/bin/
 ```
 
-## Building the stream handler
+## Building the XPC event stream handler
 
 The XPC event stream handler does not need to adapted to your use case and can be built on a Mac (with XCode installed). 
 
