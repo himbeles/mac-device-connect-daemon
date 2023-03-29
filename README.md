@@ -33,7 +33,7 @@ cp spoofmac.sh /usr/local/bin/
 
 ## Building the XPC event stream handler
 
-The XPC event stream handler does not need to adapted to your use case and can be built on a Mac (with XCode installed). 
+The XPC event stream handler does not need to be adapted to your use case and can be built on a Mac (with XCode installed). 
 
 ```
 swift build --configuration release --package-path XPCEventStreamHandler
