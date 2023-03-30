@@ -19,14 +19,14 @@ on:
 jobs:
   compile:
     # The type of runner that the job will run on
-    runs-on: [macos-latest, x64]
+    runs-on: macos-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - name: Checkout
       uses: actions/checkout@v2.7.0
       
-    - name: Compile xpc_set_event_stream_handler
+    - name: Compile 
       run: swift build -v --configuration release --package-path XPCEventStreamHandler
     
     - name: Upload Compiled Handler
