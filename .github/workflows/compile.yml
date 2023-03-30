@@ -27,7 +27,7 @@ jobs:
       uses: actions/checkout@v2.7.0
       
     - name: Compile xpc_set_event_stream_handler
-      run: swift build --configuration release --package-path XPCEventStreamHandler
+      run: swift build -v --configuration release --package-path XPCEventStreamHandler
     
     - name: Upload Compiled Handler
       uses: actions/upload-artifact@v3.1.2
@@ -35,5 +35,5 @@ jobs:
         # Artifact name
         name: handle-xpc-event-stream # optional, default is artifact
         # A file, directory or wildcard pattern that describes what to upload
-        path: ./XPCEventStreamHandler/.build/release/handle-xpc-event-stream
+        path: XPCEventStreamHandler/.build/release/handle-xpc-event-stream
         # The desired behavior if no files are found using the provided path.
