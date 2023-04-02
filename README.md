@@ -13,7 +13,7 @@ man xpc_events
 For the daemon to not be triggered repeatedly after connecting the device, a special stream handler (created by [Ford Parsons](https://github.com/snosrap/xpc_set_event_stream_handler/blob/master/xpc_set_event_stream_handler/main.m)) is used to "consume" the `com.apple.iokit.matching` event, as explained [here](https://github.com/snosrap/xpc_set_event_stream_handler).
 
 For example, this can be used to spoof the MAC address of an ethernet adapter when it is connected to the Mac.
-The setup is explained using the MAC spoofing scenario example files in `example-spoof-MAC` but can be generalized to arbitrary executables and devices.
+The setup is explained using the MAC spoofing scenario example files in `[example/spoof-MAC](example/spoof-MAC)` but can be generalized to arbitrary executables and devices.
 
 
 ## Put your shell script or executable into place
@@ -63,7 +63,7 @@ where `<IOProviderClass>` should be either `IOPCI` (Thunderbolt) or `IOUSB` (USB
 
 The identifiers can also be obtained from the `System Information` App on your Mac.
 
-![Screenshot System Information](example-spoof-MAC/screenshot-system-info.png)
+![Screenshot System Information](example/spoof-MAC/screenshot-system-info.png)
 
 Convert the hex identifiers to integers before inserting into the plist file (for example using `int(0x8086)` in python).
 
