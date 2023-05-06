@@ -2,6 +2,32 @@
 
 # Run shell script or executable triggered by device detection on a Mac
 
+---
+
+✨ **UPDATE** ✨: I have wrapped the functionality of the Launch Daemon described below in a **more user-friendly Mac app, called ["Stecker"](https://stecker.himbeles.de)**. In addition to device attachment, the app can also detect device detachment. It triggers the execution of selected Shortcuts from the macOS Shortcuts App. 
+
+<p align="center" style="padding: 10px">
+<a href="https://stecker.himbeles.de">
+<img src="https://stecker.himbeles.de/icon.png" 
+    alt="Stecker App" 
+    style="width: 160px;">
+</img>
+</a>
+</p>
+
+<p align="center" style="padding: 10px">
+<a href="https://apps.apple.com/us/app/stecker/id6447288587">
+<img src="https://tools.applemediaservices.com/api/badges/download-on-the-mac-app-store/black/en-us?size=250x83&amp;releaseDate=1437004800" 
+    alt="Download on the Mac App Store" 
+    style="width: 160px;">
+</a>
+</p>
+
+The app is very lightweight and relies only on `IOKit` notifications.
+In contrast to the launch daemon below, the direct use of the the `IOKit` framework permits to filter for additional types of `com.apple.iokit.matching` events.
+
+---
+
 This tutorial describes how to run an arbitrary executable or shell script triggered by the connection of an external device (usb/thunderbolt) to a Mac.
 
 This relies on Apple's `IOKit` library for device detection and a daemon for running the desired executable.
